@@ -65,13 +65,27 @@
           </p>
         </div>
 
-        <!-- Polaroid Photo with realistic masking tape -->
+        <!-- Instagram Dummy DP Card with realistic masking tape -->
         <div class="polaroid-container" id="polaroid-wrapper">
           <div class="masking-tape"></div>
           <div class="polaroid-card" id="polaroid-card">
             <div class="polaroid-frame">
-              <img src="assets/harshita-photo.jpg" alt="Mangal" class="polaroid-img" loading="eager">
-              <div class="polaroid-reflection"></div>
+              <div class="insta-story-ring">
+                <div class="insta-avatar-circle">
+                  <div class="insta-default-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="#a1a1aa"/>
+                      <path d="M12.0002 14.5C6.99016 14.5 2.91016 17.86 2.91016 22C2.91016 22.28 3.13016 22.5 3.41016 22.5H20.5902C20.8702 22.5 21.0902 22.28 21.0902 22C21.0902 17.86 17.0102 14.5 12.0002 14.5Z" fill="#a1a1aa"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="insta-handle-pill">
+                <span>@mangal</span>
+                <svg class="insta-verified-check" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
             </div>
             <div class="polaroid-caption">
               <span>that's me :)</span>
@@ -117,226 +131,10 @@
 
     <!-- Right Column: Reel Work Showcase -->
     <section class="work-column">
-      
-      <!-- Top Bar: Filter Chips & Auto-Scroll Controls -->
-      <div class="work-header-controls">
-        <div class="filter-bar">
-          <button class="filter-chip active" data-filter="all">All Work</button>
-          <button class="filter-chip" data-filter="founder">Founder Stories</button>
-          <button class="filter-chip" data-filter="brand">D2C & Brands</button>
-          <button class="filter-chip" data-filter="viral">Viral Formats</button>
-        </div>
-
-        <!-- Auto-scroll status and toggle -->
-        <div class="auto-scroll-panel">
-          <button class="auto-scroll-toggle-btn active" id="auto-scroll-btn" title="Toggle Auto Scroll">
-            <span class="live-indicator-dot"></span>
-            <span id="auto-scroll-label">Auto-scroll: ON</span>
-          </button>
-          <div class="speed-toggle-group">
-            <button class="speed-btn active" data-speed="1" title="Normal Speed">1x</button>
-            <button class="speed-btn" data-speed="1.8" title="Fast Speed">2x</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Scrollable Viewport with infinite auto-scroll -->
+      <!-- Scrollable Viewport: user scrolls up and down -->
       <div class="reels-viewport" id="reels-viewport">
         <div class="reels-feed" id="reels-feed">
-          
-          <!-- Reel Card 1: Anuva Kakkar · Tiggle (Shark Tank India S3) -->
-          <article class="reel-item" data-category="brand viral" data-reel-id="tiggle">
-            <div class="reel-preview-card">
-              <div class="reel-video-container autoplay-active">
-                <img src="assets/reel1-tigle.jpg" alt="Anuva Kakkar Tiggle Shark Tank India" class="reel-cover video-motion-kenburns">
-                
-                <!-- Subtle dynamic reel lighting overlay -->
-                <div class="reel-lighting-glow"></div>
-                
-                <!-- In-video kinetic cycling captions -->
-                <div class="reel-kinetic-caption" id="caption-tiggle">
-                  <span class="caption-text kinetic-pop">most of our</span>
-                </div>
-
-                <!-- Autoplay Live Progress Bar -->
-                <div class="card-video-timeline">
-                  <div class="card-timeline-fill" id="timeline-tiggle"></div>
-                </div>
-
-                <!-- Play Button Overlay -->
-                <button class="play-btn" aria-label="Play Reel">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </button>
-
-                <!-- Views & Live Playing Badge -->
-                <div class="reel-tag-badge">
-                  <span class="live-dot pulse"></span>
-                  <span class="badge-text">2.8M views</span>
-                </div>
-
-                <!-- Interactive sound & equalizer wave -->
-                <div class="reel-sound-icon active" title="Sound preview available">
-                  <div class="mini-equalizer">
-                    <span></span><span></span><span></span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Reel Info Footer -->
-              <div class="reel-meta">
-                <h3 class="reel-title">Anuva Kakkar · Tiggle</h3>
-                <p class="reel-subtitle">Shark Tank India S3</p>
-                <div class="reel-tags">
-                  <span class="tag">Founder Journey</span>
-                  <span class="tag">Viral Hook</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Reel Card 2: Founder Unplugged · Story -->
-          <article class="reel-item" data-category="founder viral" data-reel-id="interview">
-            <div class="reel-preview-card">
-              <div class="reel-video-container autoplay-active">
-                <img src="assets/reel2-interview.jpg" alt="Founder Interview Reel" class="reel-cover video-motion-subtle">
-                
-                <div class="reel-lighting-glow"></div>
-
-                <!-- Retro Camcorder HUD with dynamic timecode -->
-                <div class="camcorder-hud">
-                  <div class="hud-top">
-                    <span class="rec-dot"></span>
-                    <span class="hud-text" id="camcorder-timecode">CAMERA PLAY ▶ 00:01:16</span>
-                  </div>
-                  <div class="hud-bottom">
-                    <span>27.02.1997 TUE</span>
-                    <span class="hud-where" id="caption-interview">where</span>
-                  </div>
-                </div>
-
-                <!-- Autoplay Live Progress Bar -->
-                <div class="card-video-timeline">
-                  <div class="card-timeline-fill" id="timeline-interview"></div>
-                </div>
-
-                <!-- Play Button Overlay -->
-                <button class="play-btn" aria-label="Play Reel">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </button>
-
-                <!-- Views Badge -->
-                <div class="reel-tag-badge">
-                  <span class="live-dot pulse"></span>
-                  <span class="badge-text">1.6M views</span>
-                </div>
-
-                <div class="reel-sound-icon active" title="Sound preview available">
-                  <div class="mini-equalizer">
-                    <span></span><span></span><span></span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Reel Info Footer -->
-              <div class="reel-meta">
-                <h3 class="reel-title">Founder Raw Uncut · The Pitch</h3>
-                <p class="reel-subtitle">D2C Community Building</p>
-                <div class="reel-tags">
-                  <span class="tag">Podcast Format</span>
-                  <span class="tag">High Retention</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Reel Card 3: Creative Agency Showcase -->
-          <article class="reel-item" data-category="brand" data-reel-id="brand-growth">
-            <div class="reel-preview-card">
-              <div class="reel-video-container brand-placeholder-grad autoplay-active">
-                <div class="placeholder-mockup-content">
-                  <div class="mockup-sparkle animate-spin-slow">✦</div>
-                  <div class="mockup-hook" id="caption-brand">"how we turned a ₹0 marketing budget into 5,000 orders"</div>
-                  <div class="mockup-graph-preview">
-                    <span class="bar bar-1"></span>
-                    <span class="bar bar-2"></span>
-                    <span class="bar bar-3"></span>
-                    <span class="bar bar-4"></span>
-                  </div>
-                </div>
-
-                <div class="card-video-timeline">
-                  <div class="card-timeline-fill" id="timeline-brand"></div>
-                </div>
-
-                <button class="play-btn" aria-label="Play Reel">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </button>
-
-                <div class="reel-tag-badge">
-                  <span class="live-dot pulse"></span>
-                  <span class="badge-text">3.1M views</span>
-                </div>
-              </div>
-
-              <div class="reel-meta">
-                <h3 class="reel-title">The Viral D2C Playbook</h3>
-                <p class="reel-subtitle">Lesgoo Media Original Case Study</p>
-                <div class="reel-tags">
-                  <span class="tag">Strategy</span>
-                  <span class="tag">450% ROI</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Reel Card 4: Viral Hook Architecture -->
-          <article class="reel-item" data-category="viral founder" data-reel-id="hook-teardown">
-            <div class="reel-preview-card">
-              <div class="reel-video-container hook-card-grad autoplay-active">
-                <div class="hook-card-content">
-                  <div class="hook-badge-tag">Retention Teardown</div>
-                  <div class="hook-quote" id="caption-hook">"the 3-second hook that hooked 4.2M people on Instagram"</div>
-                  <div class="hook-visual-timeline">
-                    <div class="hook-drop-indicator">
-                      <span>0-3s Hook</span>
-                      <div class="hook-arrow-down">↓ 88% Retention</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card-video-timeline">
-                  <div class="card-timeline-fill" id="timeline-hook"></div>
-                </div>
-
-                <button class="play-btn" aria-label="Play Reel">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </button>
-
-                <div class="reel-tag-badge">
-                  <span class="live-dot pulse"></span>
-                  <span class="badge-text">4.2M views</span>
-                </div>
-              </div>
-
-              <div class="reel-meta">
-                <h3 class="reel-title">The 3-Second Viral Hook</h3>
-                <p class="reel-subtitle">Short-form Psychology Breakdown</p>
-                <div class="reel-tags">
-                  <span class="tag">Hook Teardown</span>
-                  <span class="tag">Organic Virality</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
+          <!-- All video cards load dynamically from assets/ folder -->
         </div>
       </div>
     </section>
@@ -344,83 +142,12 @@
   </main>
 
   <!-- Interactive Reel Modal / Video Player -->
-  <div class="modal-backdrop" id="video-modal" aria-hidden="true">
-    <div class="modal-card">
-      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
-      
-      <div class="modal-layout">
-        <!-- Simulated Reel Player -->
-        <div class="modal-player-pane">
-          <div class="simulated-phone-player">
-            <div class="phone-speaker-bar"></div>
-            
-            <div class="simulated-screen" id="modal-screen">
-              <img id="modal-reel-img" src="" alt="Reel preview">
-              
-              <!-- Video Controls Simulation -->
-              <div class="simulated-controls">
-                <button class="sim-play-pause-btn" id="sim-play-btn">
-                  <svg id="sim-play-icon" viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
-                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                  </svg>
-                </button>
-                <div class="sim-progress-track">
-                  <div class="sim-progress-fill" id="sim-progress-bar"></div>
-                </div>
-                <span class="sim-time" id="sim-time-text">0:14 / 0:42</span>
-              </div>
-
-              <!-- Animated Sound Wave Indicator -->
-              <div class="sound-wave-bars">
-                <span></span><span></span><span></span><span></span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Case Study Breakdown -->
-        <div class="modal-info-pane">
-          <div class="modal-badge-group">
-            <span class="modal-badge" id="modal-client-badge">Client Case Study</span>
-            <span class="modal-metrics" id="modal-metrics-text">⚡ 2.8M Organic Views</span>
-          </div>
-          
-          <h2 class="modal-title" id="modal-title">Anuva Kakkar · Tiggle</h2>
-          <p class="modal-subtitle" id="modal-subtitle">Shark Tank India Season 3 Brand Campaign</p>
-
-          <div class="case-study-details">
-            <div class="cs-block">
-              <span class="cs-label">The Hook & Angle:</span>
-              <p class="cs-text" id="modal-hook-text">Capturing the raw tension and excitement of prepping for Shark Tank pitches, stripping away corporate jargon to build genuine founder empathy.</p>
-            </div>
-
-            <div class="cs-block">
-              <span class="cs-label">The Outcome:</span>
-              <p class="cs-text" id="modal-outcome-text">2.8M+ views in the first 72 hours, resulting in an unprecedented spike in organic website traffic and brand recall.</p>
-            </div>
-
-            <div class="metrics-grid">
-              <div class="metric-box">
-                <span class="mb-val" id="modal-metric-1">2.8M</span>
-                <span class="mb-lbl">Total Views</span>
-              </div>
-              <div class="metric-box">
-                <span class="mb-val" id="modal-metric-2">92%</span>
-                <span class="mb-lbl">Watch-Through</span>
-              </div>
-              <div class="metric-box">
-                <span class="mb-val" id="modal-metric-3">14.2k</span>
-                <span class="mb-lbl">Re-shares</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal-action-footer">
-            <a href="mailto:mangal@lesgoomedia.com?subject=Collaborating%20with%20Mangal" class="btn-primary">
-              Work with Mangal →
-            </a>
-          </div>
-        </div>
+  <!-- Large Video Frame Modal (Video Ratio Only & Autoplay) -->
+  <div class="modal-backdrop video-only-modal-backdrop" id="video-modal" aria-hidden="true">
+    <div class="large-video-frame-card">
+      <button class="large-video-close" id="modal-close-btn" aria-label="Close video">&times;</button>
+      <div class="large-video-container" id="modal-large-container">
+        <!-- Autoplaying large video stream loads here -->
       </div>
     </div>
   </div>
