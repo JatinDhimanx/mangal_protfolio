@@ -20,7 +20,24 @@ Pure HTML, CSS, and JavaScript portfolio featuring direct video reels with GPU-a
 
 ---
 
-## 💻 Run Local Server
+## ☁️ Deploying to Vercel
+
+### Option 1: GitHub & Vercel Dashboard (Recommended)
+1. Push this folder to a GitHub repository.
+2. Go to [vercel.com](https://vercel.com) and click **"Add New Project"**.
+3. Import your repository and click **"Deploy"**!
+   - All settings, routing, and `/api/videos` are pre-configured in `vercel.json` and `api/videos.js`.
+
+### Option 2: Vercel CLI
+Run in your terminal:
+```bash
+npx vercel
+```
+Follow the quick prompts, and your site is live!
+
+---
+
+## 💻 Local Testing
 
 ```bash
 node server.js

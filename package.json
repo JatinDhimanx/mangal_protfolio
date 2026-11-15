@@ -1,0 +1,17 @@
+{
+  "name": "mangal-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio of Mangal — Short-Form Video Editor",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "video-editor",
+    "reels",
+    "mangal"
+  ],
+  "author": "Mangal",
+  "license": "MIT"
+}
