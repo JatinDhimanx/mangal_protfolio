@@ -28,6 +28,19 @@
   --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+/* Accessibility & Semantic SEO Utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Base Reset & Global Scrollbar Removal */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -194,15 +207,13 @@ a.pill {
   font-family: inherit;
 }
 
-.pill-clickable:hover,
-.pill-agency:hover {
+.pill-clickable:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   filter: brightness(0.97);
 }
 
-.pill-clickable:active,
-.pill-agency:active {
+.pill-clickable:active {
   transform: translateY(0) scale(0.99);
 }
 
@@ -577,26 +588,6 @@ video.reel-cover {
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* Autoplay Live Timeline at bottom of card */
-.card-video-timeline {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.25);
-  z-index: 10;
-  overflow: hidden;
-}
-
-.card-timeline-fill {
-  width: 0%;
-  height: 100%;
-  background: #facc15;
-  box-shadow: 0 0 6px rgba(250, 204, 21, 0.9);
-  transition: width 0.1s linear;
-}
-
 /* Dynamic subtle camera motion for autoplaying cards */
 .video-motion-kenburns {
   animation: kenBurnsMotion 14s ease-in-out infinite alternate;
@@ -663,40 +654,12 @@ video.reel-cover {
   to { transform: rotate(360deg); }
 }
 
-/* Reel Info / Meta (Centered like reference screenshot) */
-.reel-meta {
-  padding: 4px 6px;
-  text-align: center;
-}
-
-.reel-title {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #18181b;
-  letter-spacing: -0.01em;
-}
-
-.reel-subtitle {
-  font-size: 0.82rem;
-  color: #71717a;
-  font-weight: 400;
-  margin-top: 2px;
-}
-
+/* Metadata removed: Direct video reels only */
+.reel-meta,
+.reel-title,
+.reel-subtitle,
 .reel-tags {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 6px;
-}
-
-.tag {
-  font-size: 0.7rem;
-  font-weight: 500;
-  background: rgba(0, 0, 0, 0.04);
-  color: #52525b;
-  padding: 2px 8px;
-  border-radius: 4px;
+  display: none !important;
 }
 
 /* ========================================================
@@ -857,87 +820,6 @@ video.reel-cover {
   object-fit: cover;
   border-radius: 28px;
   display: block;
-}
-
-/* Agency Modal Layout */
-.agency-card-layout {
-  max-width: 680px;
-}
-
-.agency-header {
-  text-align: center;
-  margin-bottom: 28px;
-}
-
-.agency-pill-large {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--pill-yellow-bg);
-  color: var(--pill-yellow-text);
-  font-size: 1.4rem;
-  font-weight: 700;
-  padding: 6px 18px;
-  border-radius: 12px;
-  margin-bottom: 12px;
-}
-
-.agency-tagline {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  max-width: 480px;
-  margin: 0 auto;
-}
-
-.agency-services-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 28px;
-}
-
-.service-card {
-  display: flex;
-  gap: 16px;
-  padding: 16px 20px;
-  background: #fafafc;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  align-items: flex-start;
-}
-
-.service-icon {
-  font-size: 1.5rem;
-  line-height: 1;
-}
-
-.service-card h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 4px;
-}
-
-.service-card p {
-  font-size: 0.88rem;
-  color: #4b5563;
-  line-height: 1.5;
-}
-
-.agency-cta-box {
-  background: #f3f4f6;
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-}
-
-.agency-cta-box p {
-  font-weight: 600;
-  color: #1f2937;
 }
 
 /* ========================================================
@@ -1115,12 +997,6 @@ video.reel-cover {
     width: 38px;
     height: 38px;
     font-size: 1.5rem;
-  }
-
-  .agency-card-layout {
-    max-width: 95vw;
-    padding: 24px 18px;
-    border-radius: 20px;
   }
 }
 

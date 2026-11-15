@@ -3,13 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mangal | Content Creator & Founder of Lesgoo Media</title>
-  <meta name="description" content="Portfolio of Mangal — Content creator and founder of Lesgoo Media, helping founders and brands create viral content on social media.">
+
+  <!-- Primary SEO Meta Tags -->
+  <title>Mangal | Short-Form Video Editor & Content Creator</title>
+  <meta name="title" content="Mangal | Short-Form Video Editor & Content Creator">
+  <meta name="description" content="Official portfolio of Mangal — Professional short-form video editor and content creator. Crafting high-retention viral reels, TikToks, and YouTube Shorts for founders and consumer brands. Over 25M+ organic views generated.">
+  <meta name="keywords" content="Mangal, video editor, short form video editor, reels editor, tiktok video editor, youtube shorts editor, viral reels editor, founder personal branding, freelance video editor, cinematic reels, video editing portfolio">
+  <meta name="author" content="Mangal">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://mangal.com/">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mangal.com/">
+  <meta property="og:site_name" content="Mangal Portfolio">
+  <meta property="og:title" content="Mangal | Short-Form Video Editor & Content Creator">
+  <meta property="og:description" content="High-retention viral video editing for founders & brands. Scaled 40+ brands with 25M+ organic impressions.">
+  <meta property="og:image" content="https://mangal.com/assets/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mangal.com/">
+  <meta name="twitter:title" content="Mangal | Short-Form Video Editor & Content Creator">
+  <meta name="twitter:description" content="High-retention viral video editing for founders & brands. Scaled 40+ brands with 25M+ organic impressions.">
+  <meta name="twitter:image" content="https://mangal.com/assets/og-image.jpg">
+  <meta name="twitter:creator" content="@mangal">
+
+  <!-- JSON-LD Structured Data (Schema.org for Google Rich Results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://mangal.com/#person",
+        "name": "Mangal",
+        "jobTitle": "Short-Form Video Editor & Content Creator",
+        "url": "https://mangal.com/",
+        "sameAs": [
+          "https://www.linkedin.com",
+          "https://www.instagram.com/mangal"
+        ],
+        "knowsAbout": [
+          "Video Editing",
+          "Short-Form Video Production",
+          "Viral Content Strategy",
+          "Instagram Reels",
+          "TikTok Videos",
+          "YouTube Shorts"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://mangal.com/#website",
+        "url": "https://mangal.com/",
+        "name": "Mangal Portfolio",
+        "description": "Portfolio of Mangal — Short-Form Video Editor & Content Creator",
+        "publisher": {
+          "@id": "https://mangal.com/#person"
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
 </head>
 <body>
   <!-- Subtle interactive background dot grid -->
@@ -22,6 +86,9 @@
     <aside class="bio-column">
       <div class="bio-inner">
         
+        <!-- Semantic H1 for SEO (Screen Readers & Search Crawlers) -->
+        <h1 class="sr-only">Mangal — Short-Form Video Editor & Content Creator</h1>
+
         <!-- Bio text block -->
         <div class="bio-text-group">
           
@@ -30,11 +97,7 @@
           </p>
 
           <p class="bio-about">
-            i'm a content creator and the founder of 
-            <button class="pill pill-yellow pill-agency" id="open-agency-btn">
-              <span class="pill-icon">+</span> lesgoo media
-            </button> , 
-            a creative agency helping founders and brands create content that connects with their audience and grows their presence on social media.
+            i'm a <span class="pill pill-yellow">video editor</span> and content creator helping founders and brands create content that connects with their audience and grows their presence on social media.
           </p>
 
           <p class="bio-contact">
@@ -152,47 +215,10 @@
     </div>
   </div>
 
-  <!-- Agency Drawer / Modal -->
-  <div class="modal-backdrop" id="agency-modal" aria-hidden="true">
-    <div class="modal-card agency-card-layout">
-      <button class="modal-close" id="agency-close-btn" aria-label="Close modal">&times;</button>
-      
-      <div class="agency-header">
-        <div class="agency-pill-large">
-          <span class="sparkle">✦</span> lesgoo media
-        </div>
-        <p class="agency-tagline">We help founders & top consumer brands stop scrolling and start converting.</p>
-      </div>
-
-      <div class="agency-services-grid">
-        <div class="service-card">
-          <div class="service-icon">🎬</div>
-          <h4>Viral Short-Form Production</h4>
-          <p>End-to-end scripting, shooting direction, and fast-paced editing tailored for Reels, TikTok, and YouTube Shorts.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🎙️</div>
-          <h4>Founder Personal Branding</h4>
-          <p>Turning visionary founders into magnetic thought leaders with raw, authentic storytelling that drives direct pipeline.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">📈</div>
-          <h4>Organic Social Growth</h4>
-          <p>Data-backed content loops, audience retention optimization, and algorithmic distribution strategies.</p>
-        </div>
-      </div>
-
-      <div class="agency-cta-box">
-        <p>Ready to build a content engine that drives millions of impressions?</p>
-        <button class="btn-primary" id="agency-contact-btn">Let's Talk Content →</button>
-      </div>
-    </div>
-  </div>
-
   <!-- Toast Notification -->
   <div class="toast-notification" id="toast">
     <span class="toast-icon">✨</span>
-    <span class="toast-message" id="toast-message">Copied mangal@lesgoomedia.com to clipboard!</span>
+    <span class="toast-message" id="toast-message">Copied contact@mangal.com to clipboard!</span>
   </div>
 
   <script src="script.js"></script>

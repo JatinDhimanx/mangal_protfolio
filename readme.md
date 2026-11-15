@@ -1,33 +1,26 @@
-# Mangal Portfolio — Automated Video Showcase 🎬
+# Mangal Portfolio — Direct Video Showcase 🎬
 
-Pure HTML, CSS, and JavaScript portfolio featuring GPU-accelerated infinite reel scrolling, an Instagram-style profile, and automatic video reflection from the `assets/` folder.
-
----
-
-## 🚀 How to Add New Videos
-
-Just drop your video files into the **`assets/`** folder!
-
-### Naming:
-- `ve1.mp4`, `ve2.mp4`, `ve3.mov`, etc.
-- Any filename like `gym_deal.mp4` or `app_promo.mp4`
-
-### Automatic Behavior:
-1. **Zero Configuration**:
-   - No JSON files, no database, no coding needed.
-   - Any video in `assets/` is instantly recognized and displayed on the website.
-2. **Auto-Formatting**:
-   - `ve1.mp4` ➔ **Video Edit 01**
-   - `gym_deal.mp4` ➔ **Gym Deal**
-3. **Seamless In-Feed Video & 9:16 Large Modal**:
-   - Videos play directly looped inside their cards in the feed.
-   - Clicking any video opens it in the focused **large 9:16 vertical ratio frame** with autoplay and audio controls.
-4. **Live Auto-Refresh**:
-   - The website updates automatically every 4 seconds when new video files are dropped into `assets/`.
+Pure HTML, CSS, and JavaScript portfolio featuring direct video reels with GPU-accelerated infinite scrolling, responsive design, and automatic asset detection.
 
 ---
 
-## 💻 Running the Website
+## 🚀 How It Works
+
+1. **Direct Video Reels**:
+   - Videos are displayed directly as clean, floating video reels without titles, tags, or subtitles.
+   - Click any video to open it in the large 9:16 player with full audio, autoplay, and controls.
+
+2. **Shows ONLY Videos in `assets/`**:
+   - The feed displays **only and exactly** the videos you put in the `assets/` folder (e.g. `ve1.mp4`, `ve2.mp4`).
+   - Automatically repeats them in a seamless loop for infinite scrolling.
+
+3. **To Add More Videos**:
+   - Just drop your `.mp4`, `.mov`, or `.webm` files into the `assets/` folder!
+   - The site auto-detects new uploads every 4 seconds.
+
+---
+
+## 💻 Run Local Server
 
 ```bash
 node server.js

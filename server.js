@@ -17,7 +17,9 @@ const MIME_TYPES = {
   '.mp4': 'video/mp4',
   '.mov': 'video/quicktime',
   '.webm': 'video/webm',
-  '.m4v': 'video/mp4'
+  '.m4v': 'video/mp4',
+  '.xml': 'application/xml',
+  '.txt': 'text/plain'
 };
 
 // Scans assets/ directly for all uploaded video files

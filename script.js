@@ -80,10 +80,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           <video src="${video.videoUrl}" autoplay loop muted playsinline class="reel-cover"></video>
           <div class="reel-lighting-glow"></div>
 
-          <div class="card-video-timeline">
-            <div class="card-timeline-fill" id="timeline-${video.id}"></div>
-          </div>
-
           <button class="play-btn" aria-label="Play Video">
             <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
               <path d="M8 5v14l11-7z"/>
@@ -247,16 +243,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     reelsViewport.addEventListener('mouseleave', () => { isHovered = false; });
   }
 
-  // In-Card Progress Timelines
-  setInterval(() => {
-    videosData.forEach((v, idx) => {
-      const el = document.querySelectorAll(`#timeline-${v.id}`);
-      if (!el.length) return;
-      const progress = ((Date.now() / 35 + idx * 25) % 100);
-      el.forEach(bar => { bar.style.width = `${progress}%`; });
-    });
-  }, 50);
-
   // ==========================================
   // 4. Large Video Modal (9:16 Ratio & Instant Autoplay)
   // ==========================================
@@ -301,44 +287,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     modalCloseBtn.addEventListener('click', () => closeModal(videoModal));
   }
 
-  // Agency Modal
-  const agencyModal = document.getElementById('agency-modal');
-  const openAgencyBtn = document.getElementById('open-agency-btn');
-  const agencyCloseBtn = document.getElementById('agency-close-btn');
-  const agencyContactBtn = document.getElementById('agency-contact-btn');
-
-  if (openAgencyBtn) {
-    openAgencyBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (agencyModal) {
-        agencyModal.classList.add('active');
-        isHovered = true;
-      }
+  if (videoModal) {
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) closeModal(videoModal);
     });
   }
-
-  if (agencyCloseBtn) {
-    agencyCloseBtn.addEventListener('click', () => closeModal(agencyModal));
-  }
-
-  if (agencyContactBtn) {
-    agencyContactBtn.addEventListener('click', () => {
-      closeModal(agencyModal);
-      window.location.href = "mailto:mangal@lesgoomedia.com?subject=Lesgoo%20Media%20Growth%20Inquiry";
-    });
-  }
-
-  [videoModal, agencyModal].forEach(modal => {
-    if (!modal) return;
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal(modal);
-    });
-  });
 
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeModal(videoModal);
-      closeModal(agencyModal);
     }
   });
 
@@ -393,7 +350,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (emailPill) {
     emailPill.addEventListener('click', (e) => {
       e.preventDefault();
-      const email = 'mangal@lesgoomedia.com';
+      const email = 'contact@mangal.com';
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(email).then(() => {
           showToast(`Copied ${email} to clipboard! ✨`);
