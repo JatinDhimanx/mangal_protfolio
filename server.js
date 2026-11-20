@@ -4,6 +4,8 @@ const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 const ASSETS_DIR = path.join(__dirname, 'assets');
+const DEFAULT_VIDEO_CDN =
+  'https://cdn.jsdelivr.net/gh/JatinDhimanx/mangal_protfolio@main/assets';
 
 const MIME_TYPES = {
   '.html': 'text/html',
@@ -22,6 +24,11 @@ const MIME_TYPES = {
   '.txt': 'text/plain'
 };
 
+function getVideoUrl(file) {
+  const cdnBase = (process.env.VIDEO_CDN_URL || DEFAULT_VIDEO_CDN).replace(/\/+$/, '');
+  return `${cdnBase}/${encodeURIComponent(file)}`;
+}
+
 // Scans assets/ directly for all uploaded video files
 function getAssetVideos() {
   if (!fs.existsSync(ASSETS_DIR)) {
@@ -35,7 +42,7 @@ function getAssetVideos() {
     const baseId = path.parse(file).name.toLowerCase().replace(/[^a-z0-9_-]/g, '-');
     return {
       id: baseId,
-      videoUrl: `assets/${file}`
+      videoUrl: getVideoUrl(file)
     };
   });
 }

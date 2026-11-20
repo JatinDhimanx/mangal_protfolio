@@ -2,7 +2,7 @@
  * Mangal Portfolio — Direct Video Showcase Engine
  * 
  * Shows ONLY the exact video files uploaded in the 'assets/' folder.
- * Pure video frames with zero titles, zero tags, and seamless infinite looping.
+ * Videos are delivered by the configured CDN and only play while visible.
  */
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const videoModal = document.getElementById('video-modal');
   const modalCloseBtn = document.getElementById('modal-close-btn');
   const modalLargeContainer = document.getElementById('modal-large-container');
+  const defaultVideoCdn = 'https://cdn.jsdelivr.net/gh/JatinDhimanx/mangal_protfolio@main/assets';
 
   let videosData = [];
   const videosMap = new Map();
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     return await probeStaticAssets();
   }
 
-  // Client-side probe for assets/ve1.mp4 ... assets/ve25.mp4
+  // Client-side probe for the CDN when the API is unavailable (static hosting).
   async function probeStaticAssets() {
     const list = [];
     const candidates = [];
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     candidates.push('final.mp4');
 
     const checks = candidates.map(fileName => {
-      const url = `assets/${fileName}`;
+      const url = `${defaultVideoCdn}/${encodeURIComponent(fileName)}`;
       return fetch(url, { method: 'HEAD' })
         .then(res => {
           if (res.ok) {
@@ -77,7 +78,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     article.innerHTML = `
       <div class="reel-preview-card">
         <div class="reel-video-container autoplay-active">
-          <video src="${video.videoUrl}" autoplay loop muted playsinline class="reel-cover"></video>
+          <video src="${video.videoUrl}" preload="none" loop muted playsinline class="reel-cover"></video>
           <div class="reel-lighting-glow"></div>
 
           <button class="play-btn" aria-label="Play Video">
@@ -125,7 +126,25 @@ document.addEventListener('DOMContentLoaded', async () => {
       reelsFeed.appendChild(clone);
     });
 
+    observeVideos();
     requestAnimationFrame(updateLoopHeight);
+  }
+
+  let videoObserver;
+  function observeVideos() {
+    if (videoObserver) videoObserver.disconnect();
+
+    videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+        if (isIntersecting) {
+          target.play().catch(() => {});
+        } else {
+          target.pause();
+        }
+      });
+    }, { root: reelsViewport, rootMargin: '120px 0px' });
+
+    reelsFeed.querySelectorAll('video.reel-cover').forEach(video => videoObserver.observe(video));
   }
 
   let singleLoopHeight = 0;

@@ -9,6 +9,7 @@ Pure HTML, CSS, and JavaScript portfolio featuring direct video reels with GPU-a
 1. **Direct Video Reels**:
    - Videos are displayed directly as clean, floating video reels without titles, tags, or subtitles.
    - Click any video to open it in the large 9:16 player with full audio, autoplay, and controls.
+   - Video files are delivered through jsDelivr by default, and preview videos only play while visible.
 
 2. **Shows ONLY Videos in `assets/`**:
    - The feed displays **only and exactly** the videos you put in the `assets/` folder (e.g. `ve1.mp4`, `ve2.mp4`).
@@ -34,6 +35,16 @@ Run in your terminal:
 npx vercel
 ```
 Follow the quick prompts, and your site is live!
+
+### Configure another video CDN
+
+The API uses this repository's jsDelivr URL by default:
+
+```text
+https://cdn.jsdelivr.net/gh/JatinDhimanx/mangal_protfolio@main/assets
+```
+
+Set `VIDEO_CDN_URL` to an equivalent CDN directory when deploying elsewhere. The value should point to the folder containing the video files, without a trailing slash.
 
 ---
 

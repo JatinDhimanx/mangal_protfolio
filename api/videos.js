@@ -1,6 +1,14 @@
 const fs = require('fs');
 const path = require('path');
 
+const DEFAULT_VIDEO_CDN =
+  'https://cdn.jsdelivr.net/gh/JatinDhimanx/mangal_protfolio@main/assets';
+
+function getVideoUrl(file) {
+  const cdnBase = (process.env.VIDEO_CDN_URL || DEFAULT_VIDEO_CDN).replace(/\/+$/, '');
+  return `${cdnBase}/${encodeURIComponent(file)}`;
+}
+
 module.exports = (req, res) => {
   const assetsDir = path.join(process.cwd(), 'assets');
   let videoFiles = [];
@@ -18,7 +26,7 @@ module.exports = (req, res) => {
     const baseId = path.parse(file).name.toLowerCase().replace(/[^a-z0-9_-]/g, '-');
     return {
       id: baseId,
-      videoUrl: `assets/${file}`
+      videoUrl: getVideoUrl(file)
     };
   });
 
