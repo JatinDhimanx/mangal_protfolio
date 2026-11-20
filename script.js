@@ -44,13 +44,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const checks = candidates.map(fileName => {
       const url = `${defaultVideoCdn}/${encodeURIComponent(fileName)}`;
-      return fetch(url, { method: 'HEAD' })
+      const previewUrl = `${defaultVideoCdn}/previews/${encodeURIComponent(fileName)}`;
+      return fetch(previewUrl, { method: 'HEAD' })
         .then(res => {
           if (res.ok) {
             const base = fileName.replace(/\.[^/.]+$/, '');
             return {
               id: base,
-              videoUrl: url
+              videoUrl: url,
+              previewUrl
             };
           }
           return null;
@@ -78,7 +80,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     article.innerHTML = `
       <div class="reel-preview-card">
         <div class="reel-video-container autoplay-active">
-          <video src="${video.videoUrl}" preload="none" loop muted playsinline class="reel-cover"></video>
+          <video src="${video.previewUrl || video.videoUrl}" preload="metadata" loop muted playsinline class="reel-cover"></video>
           <div class="reel-lighting-glow"></div>
 
           <button class="play-btn" aria-label="Play Video">

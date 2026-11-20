@@ -6,7 +6,13 @@ const DEFAULT_VIDEO_CDN =
 
 function getVideoUrl(file) {
   const cdnBase = (process.env.VIDEO_CDN_URL || DEFAULT_VIDEO_CDN).replace(/\/+$/, '');
-  return `${cdnBase}/${encodeURIComponent(file)}`;
+  const encodedPath = file.split('/').map(encodeURIComponent).join('/');
+  return `${cdnBase}/${encodedPath}`;
+}
+
+function getPreviewUrl(file) {
+  const parsed = path.parse(file);
+  return getVideoUrl(`previews/${parsed.name}${parsed.ext}`);
 }
 
 module.exports = (req, res) => {
@@ -26,7 +32,8 @@ module.exports = (req, res) => {
     const baseId = path.parse(file).name.toLowerCase().replace(/[^a-z0-9_-]/g, '-');
     return {
       id: baseId,
-      videoUrl: getVideoUrl(file)
+      videoUrl: getVideoUrl(file),
+      previewUrl: getPreviewUrl(file)
     };
   });
 
